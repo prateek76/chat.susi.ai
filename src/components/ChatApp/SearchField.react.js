@@ -43,9 +43,6 @@ class ExpandingSearchField extends Component {
   };
 
   handleKeyDown = event => {
-    if (event.key) {
-      this.setState({ indexCnt: 0 });
-    }
     switch (event.keyCode) {
       case ESCAPE_KEY:
         this.closeSearch();
