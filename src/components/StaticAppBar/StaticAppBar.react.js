@@ -193,6 +193,14 @@ class StaticAppBar extends Component {
     });
   };
 
+  onRequestClose = () => {
+    this.setState({
+      login: false,
+      signup: false,
+      openForgotPassword: false,
+    });
+  };
+
   componentDidMount() {
     let url;
 
@@ -561,9 +569,10 @@ class StaticAppBar extends Component {
           onRequestClose={this.handleClose}
         >
           <Login
-            {...this.props}
+            openLogin={this.state.login}
             handleSignUp={this.handleSignUp}
             handleForgotPassword={this.handleForgotPassword}
+            onRequestClose={this.onRequestClose}
           />
           <Close style={closingStyle} onTouchTap={this.handleClose} />
         </Dialog>
